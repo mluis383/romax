@@ -1,496 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Romax Contabilidade</title>
-<link rel="icon" type="image/png" href="img/favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-.reforma-btn{
-    margin-top:10px;
-}
-
-body{
-    background:#f5f8fc;
-    color:#222;
-}
-
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    background:rgba(8,32,59,.92);
-    backdrop-filter:blur(10px);
-    z-index:1000;
-}
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 0;
-}
-
-.logo{
-    color:#fff;
-    font-size:32px;
-    font-weight:700;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-}
-
-.logo img{
-
-    height:65px;
-    width:auto;
-    display:block;
-    transition:.3s;
-
-}
-
-.logo img:hover{
-    transform:scale(1.05);
-}
-
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:35px;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:#29c7ff;
-}
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    background:
-    linear-gradient(rgba(8,32,59,.88),rgba(8,32,59,.88)),
-    url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1800&q=80");
-    background-size:cover;
-    background-position:center;
-}
-
-.hero-content{
-    max-width:700px;
-    color:white;
-}
-
-.hero h1{
-    font-size:60px;
-    margin-bottom:20px;
-}
-
-.hero h1 span{
-    color:#29c7ff;
-}
-
-.hero p{
-    font-size:20px;
-    line-height:1.8;
-    margin-bottom:35px;
-}
-
-.btn{
-    display:inline-block;
-    padding:16px 40px;
-    background:#29c7ff;
-    color:white;
-    text-decoration:none;
-    border-radius:40px;
-    font-weight:600;
-    transition:.3s;
-    margin-top:15px;
-}
-
-.btn-principal{
-    margin-top:35px;
-}
-
-.btn:hover{
-    transform:translateY(-4px);
-    box-shadow:0 15px 30px rgba(41,199,255,.35);
-}
-
-section{
-    padding:90px 0;
-}
-
-.titulo{
-    text-align:center;
-    color:#08203b;
-    font-size:42px;
-    margin-bottom:50px;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:white;
-    padding:35px;
-    border-radius:18px;
-    box-shadow:0 10px 35px rgba(0,0,0,.08);
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card h3{
-    color:#08203b;
-    margin-bottom:15px;
-}
-
-.card p{
-    color:#666;
-    line-height:1.8;
-}
-
-.contato{
-    background:#08203b;
-    color:white;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-.info{
-    background:rgba(255,255,255,.05);
-    padding:30px;
-    border-radius:15px;
-}
-
-.info h3{
-    color:#29c7ff;
-    margin-bottom:15px;
-}
-
-.info a{
-    color:white;
-    text-decoration:none;
-}
-
-footer{
-    background:#041423;
-    color:#aaa;
-    text-align:center;
-    padding:25px;
-}
-
-.whatsapp{
-    position:fixed;
-    bottom:25px;
-    right:25px;
-    width:65px;
-    height:65px;
-    border-radius:50%;
-    background:#25D366;
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-decoration:none;
-    font-size:30px;
-    box-shadow:0 10px 30px rgba(0,0,0,.3);
-}
-
-.fade{
-    opacity:0;
-    transform:translateY(30px);
-    transition:1s;
-}
-
-.fade.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
-.reforma{
-    margin-top:45px;
-    padding:35px;
-    background:rgba(255,255,255,.08);
-    border-radius:20px;
-    border-left:5px solid #29c7ff;
-    backdrop-filter:blur(5px);
-}
-
-.reforma h2{
-    font-size:32px;
-    line-height:1.3;
-    margin-bottom:15px;
-    color:#29c7ff;
-}
-
-.reforma h3{
-    font-size:18px;
-    font-weight:500;
-    line-height:1.6;
-    margin-bottom:15px;
-    color:white;
-}
-
-.reforma p{
-    font-size:16px;
-    line-height:1.7;
-    margin-bottom:25px;
-}
-
-@media(max-width:768px){
-
-nav ul{
-display:none;
-}
-
-.hero .btn{
-    margin-top:15px;
-}	
-
-.hero h1{
-font-size:42px;
-}
-
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romax Contabilidade</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <style>
+    :root { --azul:#08203b; --azul-escuro:#041423; --ciano:#29c7ff; --fundo:#f5f8fc; }
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+    html { scroll-behavior:smooth; }
+    body { background:var(--fundo); color:#222; }
+    .container { width:90%; max-width:1200px; margin:auto; }
+    header { position:fixed; inset:0 0 auto; width:100%; background:rgba(8,32,59,.92); backdrop-filter:blur(10px); z-index:1000; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:12px 0; }
+    .logo { display:flex; align-items:center; gap:10px; color:#fff; font-size:29px; font-weight:700; text-decoration:none; }
+    .logo span { color:var(--ciano); }
+    .logo img { height:55px; width:auto; display:block; transition:.3s; }
+    .logo img:hover { transform:scale(1.05); }
+    nav ul { list-style:none; display:flex; gap:35px; }
+    nav a { color:#fff; text-decoration:none; transition:.3s; }
+    nav a:hover { color:var(--ciano); }
+    .hero { min-height:100vh; display:flex; align-items:center; background:linear-gradient(rgba(8,32,59,.88),rgba(8,32,59,.88)),url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1800&q=80') center/cover; }
+    .hero-content { max-width:700px; color:#fff; padding-top:70px; }
+    .hero h1 { font-size:clamp(40px,6vw,60px); margin-bottom:20px; line-height:1.15; }
+    .hero h1 span, .reforma h2 { color:var(--ciano); }
+    .hero p { font-size:19px; line-height:1.8; margin-bottom:25px; }
+    .btn { display:inline-block; padding:15px 34px; background:var(--ciano); color:#fff; text-decoration:none; border:0; border-radius:40px; font-weight:600; cursor:pointer; transition:.3s; }
+    .btn:hover { transform:translateY(-4px); box-shadow:0 15px 30px rgba(41,199,255,.35); }
+    .reforma { margin-top:35px; padding:30px; background:rgba(255,255,255,.08); border-left:5px solid var(--ciano); border-radius:20px; backdrop-filter:blur(5px); }
+    .reforma h2 { font-size:28px; line-height:1.3; margin-bottom:12px; }
+    .reforma h3 { font-size:17px; line-height:1.6; margin-bottom:12px; font-weight:500; }
+    .reforma p { font-size:15px; margin:0; }
+    section { padding:90px 0; }
+    .titulo { text-align:center; color:var(--azul); font-size:clamp(32px,4vw,42px); margin-bottom:40px; }
+    .servicosSwiper { padding:15px 8px 54px; }
+    .swiper-slide { height:auto; }
+    .swiper-slide .card { margin:10px; }
+    .card { height:calc(100% - 20px); min-height:250px; background:#fff; padding:30px; border:0; width:100%; text-align:left; border-radius:18px; box-shadow:0 10px 35px rgba(0,0,0,.08); cursor:pointer; transition:.3s; }
+    .card:hover, .card:focus-visible, .card.ativo { transform:translateY(-8px); outline:none; box-shadow:0 18px 38px rgba(8,32,59,.18); }
+    .card.ativo { border:2px solid var(--ciano); }
+    .card h3 { display:flex; align-items:center; gap:12px; color:var(--azul); margin-bottom:15px; font-size:21px; }
+    .card p { color:#555; line-height:1.7; }
+    .servico-icon { width:52px; height:52px; border-radius:50%; background:linear-gradient(135deg,var(--ciano),#0b6cf5); color:#fff; display:grid; place-items:center; font-size:21px; flex-shrink:0; transition:.3s; }
+    .card:hover .servico-icon, .card.ativo .servico-icon { transform:rotate(10deg) scale(1.08); box-shadow:0 10px 20px rgba(41,199,255,.35); }
+    .saiba-mais { display:block; margin-top:20px; color:var(--ciano); font-weight:600; }
+    .swiper-button-next, .swiper-button-prev { color:var(--ciano); }
+    .swiper-pagination-bullet-active { background:var(--ciano); }
+    .detalhe-box { margin-top:10px; display:grid; grid-template-columns:75px 1fr; gap:8px 20px; background:#fff; padding:38px; border-radius:20px; box-shadow:0 15px 35px rgba(0,0,0,.08); border-left:6px solid var(--ciano); }
+    .detalhe-icone { grid-row:span 3; width:62px; height:62px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,var(--ciano),#0b6cf5); color:#fff; font-size:25px; }
+    .detalhe-box h2 { color:var(--azul); }
+    .detalhe-box p { color:#555; line-height:1.8; }
+    .detalhe-box ul { grid-column:2; margin:12px 0; padding-left:20px; color:#555; }
+    .detalhe-box li { margin-bottom:8px; }
+    .detalhe-box .btn { grid-column:2; justify-self:start; }
+    .contato { background:var(--azul); color:#fff; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px; }
+    .info { background:rgba(255,255,255,.05); padding:30px; border-radius:15px; }
+    .info h3 { color:var(--ciano); margin-bottom:15px; }
+    .info a { color:#fff; text-decoration:none; }
+    footer { background:var(--azul-escuro); color:#aaa; text-align:center; padding:25px; }
+    .whatsapp { position:fixed; right:25px; bottom:25px; width:65px; height:65px; display:grid; place-items:center; border-radius:50%; background:#25d366; color:#fff; text-decoration:none; font-size:30px; box-shadow:0 10px 30px rgba(0,0,0,.3); z-index:999; }
+    .fade { opacity:0; transform:translateY(30px); transition:1s; }
+    .fade.show { opacity:1; transform:translateY(0); }
+    @media (max-width:768px) { nav ul { display:none; } .logo img { height:45px; } .detalhe-box { grid-template-columns:1fr; } .detalhe-icone { grid-row:auto; } .detalhe-box ul, .detalhe-box .btn { grid-column:auto; } .swiper-button-next, .swiper-button-prev { display:none; } }
+  </style>
 </head>
-
 <body>
-
-<header>
-
-<div class="container">
-
-<nav>
-
-<div class="logo">
-    <img src="img\logo6.png" alt="Romax Contabilidade">
-<div class="logo">Roma<span>X</span>
-</div>
-</div>
-
-
-
-
-
-
-<ul>
-<li><a href="#inicio">Início</a></li>
-<li><a href="#servicos">Serviços</a></li>
-<li><a href="#contato">Contato</a></li>
-</ul>
-
-</nav>
-
-</div>
-
-</header>
-
-<section class="hero" id="inicio">
-
-<div class="container hero-content fade">
-
-<h1>
-Sua empresa merece uma <span>contabilidade inteligente.</span>
-</h1>
-
-<p>
-A <strong>Romax Contabilidade</strong> oferece soluções completas em contabilidade,
-assessoria fiscal, departamento pessoal e consultoria para empresas de todos os portes.
-Nosso compromisso é garantir segurança, organização e crescimento para o seu negócio.
-</p>
-
-<div class="reforma">
-<h2>
-A Reforma Tributária vai mudar o seu negócio. Você está preparado?
-</h2>
-<h3>
-Não deixe sua empresa no escuro. Realizamos Estudos de Impacto e Análise Tributária personalizados para o seu modelo de negócio.
-</h3>
-<p>
-Entenda exatamente como as novas regras fiscais afetam sua precificação,
-sua margem de lucro e sua carga tributária. Antecipe-se às mudanças,
-evite surpresas no caixa e descubra oportunidades de otimização fiscal.
-</p>
-
-
-</div>
-
-<a class="btn btn-principal" href="#contato">
-Falar com Especialista
-</a>
-
-</div>
-
-</section>
-
-<section id="servicos">
-
-<div class="container">
-
-<h2 class="titulo fade">
-Nossos Serviços
-</h2>
-
-<div class="cards">
-
-<div class="card fade">
-<h3>📊 Contabilidade Empresarial</h3>
-<p>Escrituração contábil completa e elaboração de demonstrações financeiras.</p>
-</div>
-<div class="card fade">
-
-<h3>📋 Regularização Empresarial</h3>
-
-<p>
-Abertura, alterações e encerramentos empresariais com suporte completo
-para manter sua empresa regularizada e em conformidade com as exigências legais.
-</p>
-
-</div>
-
-<div class="card fade">
-<h3>💰 Planejamento Tributário</h3>
-<p>Reduza custos tributários de forma legal e maximize os resultados da sua empresa.</p>
-</div>
-
-<div class="card fade">
-<h3>👨‍💼 Departamento Pessoal</h3>
-<p>Folha de pagamento, admissões, férias, rescisões e obrigações trabalhistas.</p>
-</div>
-
-<div class="card fade">
-<h3>📈 Consultoria Empresarial</h3>
-<p>Orientação estratégica para gestão financeira e crescimento sustentável.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="contato" id="contato">
-
-<div class="container">
-
-<h2 class="titulo" style="color:white;">
-Entre em Contato
-</h2>
-
-<div class="grid">
-
-<div class="info fade">
-
-<h3>📞 Telefone / WhatsApp</h3>
-
-<p>
-<a href="https://wa.me/5511949887154">
-+55 (11) 94988-7154
-</a>
-</p>
-
-</div>
-
-<div class="info fade">
-
-<h3>📧 E-mail</h3>
-
-<p>
-<a href="mailto:wellington@romaxcontabilidade.com.br">
-wellington@romaxcontabilidade.com.br
-</a>
-</p>
-
-</div>
-
-<div class="info fade">
-
-<h3>📍 Endereço</h3>
-
-<p>
-Barueri - São Paulo
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-© <span id="ano"></span> Romax Contabilidade - Todos os direitos reservados.
-
-</footer>
-
-<a class="whatsapp" href="https://wa.me/5511949887154" target="_blank">
-💬
-</a>
-
-<script>
-
-document.getElementById("ano").innerHTML = new Date().getFullYear();
-
-const elementos = document.querySelectorAll(".fade");
-
-const observer = new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-
-});
-
-},{threshold:0.2});
-
-elementos.forEach(el=>observer.observe(el));
-
-</script>
-
+  <header><div class="container"><nav>
+    <a class="logo" href="#inicio" aria-label="Romax Contabilidade"><img src="img/logo6.png" alt="Logo Romax Contabilidade" onerror="this.style.display='none'"><span>Roma</span>X</a>
+    <ul><li><a href="#inicio">Início</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#contato">Contato</a></li></ul>
+  </nav></div></header>
+  <main>
+    <section class="hero" id="inicio"><div class="container hero-content fade">
+      <h1>Sua empresa merece uma <span>contabilidade inteligente.</span></h1>
+      <p>A <strong>Romax Contabilidade</strong> oferece soluções completas em contabilidade, assessoria fiscal, departamento pessoal e consultoria para empresas de todos os portes. Nosso compromisso é garantir segurança, organização e crescimento para o seu negócio.</p>
+      <div class="reforma"><h2>A Reforma Tributária vai mudar o seu negócio. Você está preparado?</h2><h3>Realizamos estudos de impacto e análise tributária personalizados para o seu modelo de negócio.</h3><p>Entenda os efeitos das novas regras na precificação, margem de lucro e carga tributária. Antecipe-se às mudanças e encontre oportunidades de otimização fiscal.</p></div>
+      <a class="btn" href="#contato">Falar com Especialista</a>
+    </div></section>
+    <section id="servicos"><div class="container">
+      <h2 class="titulo fade">Nossos Serviços</h2>
+      <div class="swiper servicosSwiper" aria-label="Carrossel de serviços"><div class="swiper-wrapper">
+        <div class="swiper-slide"><button class="card ativo" type="button" data-servico="contabilidade" aria-pressed="true"><h3><span class="servico-icon"><i class="fa-solid fa-chart-line"></i></span>Contabilidade Empresarial</h3><p>Escrituração contábil completa e demonstrações financeiras para decisões mais seguras.</p><span class="saiba-mais">Ver detalhamento</span></button></div>
+        <div class="swiper-slide"><button class="card" type="button" data-servico="regularizacao" aria-pressed="false"><h3><span class="servico-icon"><i class="fa-solid fa-clipboard-check"></i></span>Regularização Empresarial</h3><p>Abertura, alterações e encerramento com suporte para manter sua empresa regularizada.</p><span class="saiba-mais">Ver detalhamento</span></button></div>
+        <div class="swiper-slide"><button class="card" type="button" data-servico="tributario" aria-pressed="false"><h3><span class="servico-icon"><i class="fa-solid fa-file-invoice-dollar"></i></span>Planejamento Tributário</h3><p>Reduza custos tributários legalmente e potencialize os resultados da empresa.</p><span class="saiba-mais">Ver detalhamento</span></button></div>
+        <div class="swiper-slide"><button class="card" type="button" data-servico="pessoal" aria-pressed="false"><h3><span class="servico-icon"><i class="fa-solid fa-users"></i></span>Departamento Pessoal</h3><p>Rotinas trabalhistas cuidadas com precisão, agilidade e conformidade.</p><span class="saiba-mais">Ver detalhamento</span></button></div>
+        <div class="swiper-slide"><button class="card" type="button" data-servico="consultoria" aria-pressed="false"><h3><span class="servico-icon"><i class="fa-solid fa-handshake"></i></span>Consultoria Empresarial</h3><p>Orientação estratégica para uma gestão financeira sólida e crescimento sustentável.</p><span class="saiba-mais">Ver detalhamento</span></button></div>
+      </div><div class="swiper-pagination"></div><div class="swiper-button-prev"></div><div class="swiper-button-next"></div></div>
+      <article id="detalheServico" class="detalhe-box fade" aria-live="polite"></article>
+    </div></section>
+    <section class="contato" id="contato"><div class="container"><h2 class="titulo" style="color:#fff">Entre em Contato</h2><div class="grid">
+      <div class="info fade"><h3><i class="fa-solid fa-phone"></i> Telefone / WhatsApp</h3><p><a href="https://wa.me/5511949887154" target="_blank" rel="noopener">+55 (11) 94988-7154</a></p></div>
+      <div class="info fade"><h3><i class="fa-solid fa-envelope"></i> E-mail</h3><p><a href="mailto:wellington@romaxcontabilidade.com.br">wellington@romaxcontabilidade.com.br</a></p></div>
+      <div class="info fade"><h3><i class="fa-solid fa-location-dot"></i> Endereço</h3><p>Barueri - São Paulo</p></div>
+    </div></div></section>
+  </main>
+  <footer>© <span id="ano"></span> Romax Contabilidade - Todos os direitos reservados.</footer>
+  <a class="whatsapp" href="https://wa.me/5511949887154" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const servicos = {
+      contabilidade:{icone:'fa-chart-line',titulo:'Contabilidade Empresarial',texto:'Mantemos as informações financeiras da sua empresa organizadas, confiáveis e em conformidade com a legislação, apoiando decisões mais assertivas.',itens:['Escrituração contábil completa','Balanço Patrimonial e DRE','Obrigações acessórias','Relatórios gerenciais','Apoio estratégico ao empresário']},
+      regularizacao:{icone:'fa-clipboard-check',titulo:'Regularização Empresarial',texto:'Cuidamos de cada etapa burocrática para que sua empresa opere de forma regular e segura desde o primeiro dia.',itens:['Abertura e formalização de empresas','Alterações contratuais e cadastrais','Encerramento empresarial','Obtenção e atualização de licenças','Acompanhamento nos órgãos competentes']},
+      tributario:{icone:'fa-file-invoice-dollar',titulo:'Planejamento Tributário',texto:'Analisamos o cenário do seu negócio para encontrar alternativas legais que reduzam a carga tributária e elevem a eficiência.',itens:['Análise do regime tributário','Simulações de cenários fiscais','Revisão de enquadramento','Mapeamento de oportunidades','Acompanhamento da Reforma Tributária']},
+      pessoal:{icone:'fa-users',titulo:'Departamento Pessoal',texto:'Sua equipe é cuidada com processos trabalhistas organizados, pontuais e alinhados à legislação vigente.',itens:['Folha de pagamento','Admissões e desligamentos','Férias e benefícios','eSocial e obrigações trabalhistas','Atendimento a colaboradores']},
+      consultoria:{icone:'fa-handshake',titulo:'Consultoria Empresarial',texto:'Transformamos dados em orientação prática para fortalecer a gestão e apoiar o crescimento sustentável da sua empresa.',itens:['Diagnóstico financeiro','Indicadores para gestão','Organização de processos','Apoio à tomada de decisão','Plano de crescimento']}
+    };
+    const detalhe = document.getElementById('detalheServico');
+    function mostrarServico(chave) { const s = servicos[chave]; detalhe.innerHTML = `<div class="detalhe-icone"><i class="fa-solid ${s.icone}"></i></div><h2>${s.titulo}</h2><p>${s.texto}</p><ul>${s.itens.map(item => `<li><i class="fa-solid fa-check" style="color:#29c7ff"></i> ${item}</li>`).join('')}</ul><a href="#contato" class="btn">Solicitar atendimento</a>`; document.querySelectorAll('.card').forEach(card => { const ativo = card.dataset.servico === chave; card.classList.toggle('ativo', ativo); card.setAttribute('aria-pressed', ativo); }); }
+    document.querySelectorAll('.card').forEach(card => card.addEventListener('click', () => mostrarServico(card.dataset.servico)));
+    mostrarServico('contabilidade');
+    new Swiper('.servicosSwiper',{loop:true,spaceBetween:20,autoplay:{delay:3500,disableOnInteraction:false},pagination:{el:'.swiper-pagination',clickable:true},navigation:{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev'},breakpoints:{0:{slidesPerView:1},768:{slidesPerView:2},1100:{slidesPerView:3}}});
+    document.getElementById('ano').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); }), {threshold:.15});
+    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
