@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Romax Contabilidade</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f8fc;
+    color:#222;
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:rgba(8,32,59,.92);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    color:#fff;
+    font-size:32px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#29c7ff;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:35px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#29c7ff;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(rgba(8,32,59,.88),rgba(8,32,59,.88)),
+    url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1800&q=80");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:700px;
+    color:white;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#29c7ff;
+}
+
+.hero p{
+    font-size:20px;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 40px;
+    background:#29c7ff;
+    color:white;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 30px rgba(41,199,255,.35);
+}
+
+section{
+    padding:90px 0;
+}
+
+.titulo{
+    text-align:center;
+    color:#08203b;
+    font-size:42px;
+    margin-bottom:50px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#08203b;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#666;
+    line-height:1.8;
+}
+
+.contato{
+    background:#08203b;
+    color:white;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.info{
+    background:rgba(255,255,255,.05);
+    padding:30px;
+    border-radius:15px;
+}
+
+.info h3{
+    color:#29c7ff;
+    margin-bottom:15px;
+}
+
+.info a{
+    color:white;
+    text-decoration:none;
+}
+
+footer{
+    background:#041423;
+    color:#aaa;
+    text-align:center;
+    padding:25px;
+}
+
+.whatsapp{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.fade{
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+nav ul{
+display:none;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+Roma<span>X</span>
+
+
+</div>
+
+<ul>
+<li><a href="#inicio">Início</a></li>
+<li><a href="#servicos">Serviços</a></li>
+<li><a href="#contato">Contato</a></li>
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="hero" id="inicio">
+
+<div class="container hero-content fade">
+
+<h1>
+Sua empresa merece uma <span>contabilidade inteligente.</span>
+</h1>
+
+<p>
+A <strong>Romax Contabilidade</strong> oferece soluções completas em contabilidade,
+assessoria fiscal, departamento pessoal e consultoria para empresas de todos os portes.
+Nosso compromisso é garantir segurança, organização e crescimento para o seu negócio.
+</p>
+
+<a class="btn" href="#contato">
+Solicitar Atendimento
+</a>
+
+</div>
+
+</section>
+
+<section id="servicos">
+
+<div class="container">
+
+<h2 class="titulo fade">
+Nossos Serviços
+</h2>
+
+<div class="cards">
+
+<div class="card fade">
+<h3>📊 Contabilidade Empresarial</h3>
+<p>Escrituração contábil completa e elaboração de demonstrações financeiras.</p>
+</div>
+
+<div class="card fade">
+<h3>💰 Planejamento Tributário</h3>
+<p>Reduza custos tributários de forma legal e maximize os resultados da sua empresa.</p>
+</div>
+
+<div class="card fade">
+<h3>👨‍💼 Departamento Pessoal</h3>
+<p>Folha de pagamento, admissões, férias, rescisões e obrigações trabalhistas.</p>
+</div>
+
+<div class="card fade">
+<h3>📈 Consultoria Empresarial</h3>
+<p>Orientação estratégica para gestão financeira e crescimento sustentável.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="contato" id="contato">
+
+<div class="container">
+
+<h2 class="titulo" style="color:white;">
+Entre em Contato
+</h2>
+
+<div class="grid">
+
+<div class="info fade">
+
+<h3>📞 Telefone / WhatsApp</h3>
+
+<p>
+<a href="https://wa.me/5511949887154">
++55 (11) 94988-7154
+</a>
+</p>
+
+</div>
+
+<div class="info fade">
+
+<h3>📧 E-mail</h3>
+
+<p>
+<a href="mailto:dpwellingtonrocha@gmail.com">
+dpwellingtonrocha@gmail.com
+</a>
+</p>
+
+</div>
+
+<div class="info fade">
+
+<h3>📍 Endereço</h3>
+
+<p>
+Barueri - São Paulo
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© <span id="ano"></span> Romax Contabilidade - Todos os direitos reservados.
+
+</footer>
+
+<a class="whatsapp" href="https://wa.me/5511949887154" target="_blank">
+💬
+</a>
+
+<script>
+
+document.getElementById("ano").innerHTML = new Date().getFullYear();
+
+const elementos = document.querySelectorAll(".fade");
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+
+});
+
+},{threshold:0.2});
+
+elementos.forEach(el=>observer.observe(el));
+
+</script>
+
+</body>
+</html>
