@@ -47,3 +47,18 @@
     display: none !important;
   }
 }
+
+
+/* Ajuste de responsividade para o título principal da Hero Section */
+@media (max-width: 768px) {
+  .hero-main-heading {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-main-heading {
+    font-size: clamp(1.6rem, 8.5vw, 2.5rem);
+  }
+}
