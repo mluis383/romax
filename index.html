@@ -3,121 +3,475 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Romax Contabilidade</title>
-  <link rel="icon" type="image/png" href="img/favicon.png">
+  <title>Romax Contabilidade — Estratégia e Alta Performance Contábil</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <style>
-    :root { --azul:#08203b; --azul-escuro:#041423; --ciano:#29c7ff; --fundo:#f5f8fc; }
-    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
-    html { scroll-behavior:smooth; }
-    body { background:var(--fundo); color:#222; }
-    .container { width:90%; max-width:1200px; margin:auto; }
-    header { position:fixed; inset:0 0 auto; width:100%; background:rgba(8,32,59,.92); backdrop-filter:blur(10px); z-index:1000; }
-    nav { display:flex; justify-content:space-between; align-items:center; padding:12px 0; }
-    .logo { display:flex; align-items:center; gap:10px; color:#fff; font-size:29px; font-weight:700; text-decoration:none; }
-    .logo span { color:var(--ciano); }
-    .logo img { height:55px; width:auto; display:block; transition:.3s; }
-    .logo img:hover { transform:scale(1.05); }
-    nav ul { list-style:none; display:flex; gap:35px; }
-    nav a { color:#fff; text-decoration:none; transition:.3s; }
-    nav a:hover { color:var(--ciano); }
-    .hero { min-height:100vh; display:flex; align-items:center; background:linear-gradient(rgba(8,32,59,.88),rgba(8,32,59,.88)),url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1800&q=80') center/cover; }
-    .hero-content { max-width:700px; color:#fff; padding-top:70px; }
-    .hero h1 { font-size:clamp(40px,6vw,60px); margin-bottom:20px; line-height:1.15; }
-    .hero h1 span, .reforma h2 { color:var(--ciano); }
-    .hero p { font-size:19px; line-height:1.8; margin-bottom:25px; }
-    .btn { display:inline-block; padding:15px 34px; background:var(--ciano); color:#fff; text-decoration:none; border:0; border-radius:40px; font-weight:600; cursor:pointer; transition:.3s; }
-    .btn:hover { transform:translateY(-4px); box-shadow:0 15px 30px rgba(41,199,255,.35); }
-    .reforma { margin-top:35px; padding:30px; background:rgba(255,255,255,.08); border-left:5px solid var(--ciano); border-radius:20px; backdrop-filter:blur(5px); }
-    .reforma h2 { font-size:28px; line-height:1.3; margin-bottom:12px; }
-    .reforma h3 { font-size:17px; line-height:1.6; margin-bottom:12px; font-weight:500; }
-    .reforma p { font-size:15px; margin:0; }
-    section { padding:90px 0; }
-    .titulo { text-align:center; color:var(--azul); font-size:clamp(32px,4vw,42px); margin-bottom:40px; }
-    .servicosSwiper { padding:15px 8px 54px; }
-    .swiper-slide { height:auto; }
-    .swiper-slide .card { margin:10px; }
-    .card { height:calc(100% - 20px); min-height:250px; background:#fff; padding:30px; border:0; width:100%; text-align:left; border-radius:18px; box-shadow:0 10px 35px rgba(0,0,0,.08); cursor:pointer; transition:.3s; }
-    .card:hover, .card:focus-visible, .card.ativo { transform:translateY(-8px); outline:none; box-shadow:0 18px 38px rgba(8,32,59,.18); }
-    .card.ativo { border:2px solid var(--ciano); }
-    .card h3 { display:flex; align-items:center; gap:12px; color:var(--azul); margin-bottom:15px; font-size:21px; }
-    .card p { color:#555; line-height:1.7; }
-    .servico-icon { width:52px; height:52px; border-radius:50%; background:linear-gradient(135deg,var(--ciano),#0b6cf5); color:#fff; display:grid; place-items:center; font-size:21px; flex-shrink:0; transition:.3s; }
-    .card:hover .servico-icon, .card.ativo .servico-icon { transform:rotate(10deg) scale(1.08); box-shadow:0 10px 20px rgba(41,199,255,.35); }
-    .saiba-mais { display:block; margin-top:20px; color:var(--ciano); font-weight:600; }
-    .swiper-button-next, .swiper-button-prev { color:var(--ciano); }
-    .swiper-pagination-bullet-active { background:var(--ciano); }
-    .detalhe-box { margin-top:10px; display:grid; grid-template-columns:75px 1fr; gap:8px 20px; background:#fff; padding:38px; border-radius:20px; box-shadow:0 15px 35px rgba(0,0,0,.08); border-left:6px solid var(--ciano); }
-    .detalhe-icone { grid-row:span 3; width:62px; height:62px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,var(--ciano),#0b6cf5); color:#fff; font-size:25px; }
-    .detalhe-box h2 { color:var(--azul); }
-    .detalhe-box p { color:#555; line-height:1.8; }
-    .detalhe-box ul { grid-column:2; margin:12px 0; padding-left:20px; color:#555; }
-    .detalhe-box li { margin-bottom:8px; }
-    .detalhe-box .btn { grid-column:2; justify-self:start; }
-    .contato { background:var(--azul); color:#fff; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px; }
-    .info { background:rgba(255,255,255,.05); padding:30px; border-radius:15px; }
-    .info h3 { color:var(--ciano); margin-bottom:15px; }
-    .info a { color:#fff; text-decoration:none; }
-    footer { background:var(--azul-escuro); color:#aaa; text-align:center; padding:25px; }
-    .whatsapp { position:fixed; right:25px; bottom:25px; width:65px; height:65px; display:grid; place-items:center; border-radius:50%; background:#25d366; color:#fff; text-decoration:none; font-size:30px; box-shadow:0 10px 30px rgba(0,0,0,.3); z-index:999; }
-    .fade { opacity:0; transform:translateY(30px); transition:1s; }
-    .fade.show { opacity:1; transform:translateY(0); }
-    @media (max-width:768px) { nav ul { display:none; } .logo img { height:45px; } .detalhe-box { grid-template-columns:1fr; } .detalhe-icone { grid-row:auto; } .detalhe-box ul, .detalhe-box .btn { grid-column:auto; } .swiper-button-next, .swiper-button-prev { display:none; } }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-  <header><div class="container"><nav>
-    <a class="logo" href="#inicio" aria-label="Romax Contabilidade"><img src="img/logo6.png" alt="Logo Romax Contabilidade" onerror="this.style.display='none'"><span>Roma</span>X</a>
-    <ul><li><a href="#inicio">Início</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#contato">Contato</a></li></ul>
-  </nav></div></header>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="custom-cursor-follower" id="cursor-follower"></div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scroll-progress"></div>
+  </div>
+
+  <!-- Continuous Running Ticker / Marquee -->
+  <div class="marquee-wrapper">
+    <div class="marquee-content">
+      <span>ROMAX CONTABILIDADE</span>
+      <span class="dot">•</span>
+      <span>ESTRATÉGIA FINANCEIRA</span>
+      <span class="dot">•</span>
+      <span>INTELIGÊNCIA TRIBUTÁRIA</span>
+      <span class="dot">•</span>
+      <span>ALTA PERFORMANCE</span>
+      <span class="dot">•</span>
+      <span>ROMAX CONTABILIDADE</span>
+      <span class="dot">•</span>
+      <span>ESTRATÉGIA FINANCEIRA</span>
+      <span class="dot">•</span>
+      <span>INTELIGÊNCIA TRIBUTÁRIA</span>
+      <span class="dot">•</span>
+      <span>ALTA PERFORMANCE</span>
+      <span class="dot">•</span>
+    </div>
+  </div>
+
+  <!-- Navigation Header -->
+  <header class="site-header" id="header">
+    <div class="header-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-symbol">
+          <svg viewBox="0 0 100 100" class="logo-svg">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="6"/>
+            <path d="M25 65 L45 45 L60 55 L80 30" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+            <polygon points="80,30 70,32 78,40" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">ROMAX</span>
+          <span class="brand-sub">CONTABILIDADE</span>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#servicos" class="nav-link">Serviços</a></li>
+          <li><a href="#reforma" class="nav-link">Reforma Tributária</a></li>
+          <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+          <li><a href="#processo" class="nav-link">Processo</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#contato" class="btn-primary magnetic-btn">
+          <span>FALAR COM A ROMAX</span>
+          <i class="fa-solid => fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
   <main>
-    <section class="hero" id="inicio"><div class="container hero-content fade">
-      <h1>Sua empresa merece uma <span>contabilidade inteligente.</span></h1>
-      <p>A <strong>Romax Contabilidade</strong> oferece soluções completas em contabilidade, assessoria fiscal, departamento pessoal e consultoria para empresas de todos os portes. Nosso compromisso é garantir segurança, organização e crescimento para o seu negócio.</p>
-      <div class="reforma"><h2>A Reforma Tributária vai mudar o seu negócio. Você está preparado?</h2><h3>Realizamos estudos de impacto e análise tributária personalizados para o seu modelo de negócio.</h3><p>Entenda os efeitos das novas regras na precificação, margem de lucro e carga tributária. Antecipe-se às mudanças e encontre oportunidades de otimização fiscal.</p></div>
-      <a class="btn" href="#contato">Falar com Especialista</a>
-    </div></section>
-    <section id="servicos"><div class="container">
-      <h2 class="titulo fade">Nossos Serviços</h2>
-      <div class="swiper servicosSwiper" aria-label="Carrossel de serviços"><div class="swiper-wrapper">
-        <div class="swiper-slide"><button class="card ativo" type="button" data-servico="contabilidade" aria-pressed="true"><h3><span class="servico-icon"><i class="fa-solid fa-chart-line"></i></span>Contabilidade Empresarial</h3><p>Escrituração contábil completa e demonstrações financeiras para decisões mais seguras.</p><span class="saiba-mais">Ver detalhamento</span></button></div>
-        <div class="swiper-slide"><button class="card" type="button" data-servico="regularizacao" aria-pressed="false"><h3><span class="servico-icon"><i class="fa-solid fa-clipboard-check"></i></span>Regularização Empresarial</h3><p>Abertura, alterações e encerramento com suporte para manter sua empresa regularizada.</p><span class="saiba-mais">Ver detalhamento</span></button></div>
-        <div class="swiper-slide"><button class="card" type="button" data-servico="tributario" aria-pressed="false"><h3><span class="servico-icon"><i class="fa-solid fa-file-invoice-dollar"></i></span>Planejamento Tributário</h3><p>Reduza custos tributários legalmente e potencialize os resultados da empresa.</p><span class="saiba-mais">Ver detalhamento</span></button></div>
-        <div class="swiper-slide"><button class="card" type="button" data-servico="pessoal" aria-pressed="false"><h3><span class="servico-icon"><i class="fa-solid fa-users"></i></span>Departamento Pessoal</h3><p>Rotinas trabalhistas cuidadas com precisão, agilidade e conformidade.</p><span class="saiba-mais">Ver detalhamento</span></button></div>
-        <div class="swiper-slide"><button class="card" type="button" data-servico="consultoria" aria-pressed="false"><h3><span class="servico-icon"><i class="fa-solid fa-handshake"></i></span>Consultoria Empresarial</h3><p>Orientação estratégica para uma gestão financeira sólida e crescimento sustentável.</p><span class="saiba-mais">Ver detalhamento</span></button></div>
-      </div><div class="swiper-pagination"></div><div class="swiper-button-prev"></div><div class="swiper-button-next"></div></div>
-      <article id="detalheServico" class="detalhe-box fade" aria-live="polite"></article>
-    </div></section>
-    <section class="contato" id="contato"><div class="container"><h2 class="titulo" style="color:#fff">Entre em Contato</h2><div class="grid">
-      <div class="info fade"><h3><i class="fa-solid fa-phone"></i> Telefone / WhatsApp</h3><p><a href="https://wa.me/5511949887154" target="_blank" rel="noopener">+55 (11) 94988-7154</a></p></div>
-      <div class="info fade"><h3><i class="fa-solid fa-envelope"></i> E-mail</h3><p><a href="mailto:wellington@romaxcontabilidade.com.br">wellington@romaxcontabilidade.com.br</a></p></div>
-      <div class="info fade"><h3><i class="fa-solid fa-location-dot"></i> Endereço</h3><p>Barueri - São Paulo</p></div>
-    </div></div></section>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        <div class="hero-top-meta">
+          <span class="meta-tag"><i class="fa-solid fa-chart-line"></i> Consultoria & Estratégia Contábil</span>
+          <span class="meta-year">EST. 2024</span>
+        </div>
+
+        <div class="hero-editorial-title">
+          <h1 class="hero-main-heading">
+            <span class="hero-line hero-reveal">ROMAX</span>
+            <span class="hero-line hero-accent hero-reveal">CONTABILIDADE</span>
+          </h1>
+          <p class="hero-subtitle hero-reveal">
+            Gestão estratégica, inteligência tributária e contabilidade consultiva para empresas que visam liderança e expansão sólida de mercado.
+          </p>
+		   <p class="hero-subtitle hero-reveal">Através de um modelo de escritório digital, garantimos um atendimento ágil, seguro e sem fronteiras para otimizar o dia a dia do seu negócio</p>
+        </div>
+
+        <div class="hero-bottom-grid">
+          <div class="hero-card-stat hero-reveal">
+            <span class="stat-num">100%</span>
+            <span class="stat-desc">Foco na eficiência fiscal e proteção patrimonial corporativa.</span>
+          </div>
+
+          <div class="hero-main-cta hero-reveal">
+            <a href="#contato" class="btn-editorial magnetic-btn">
+              <span>AGENDAR CONSULTORIA ESTRATÉGICA</span>
+              <span class="btn-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE A ROMAX -->
+    <section class="section-editorial sobre-section" id="sobre">
+      <div class="container">
+        <div class="editorial-grid">
+          <div class="editorial-left">
+            <span class="section-num">01 / SOBRE</span>
+            <h2 class="section-title">Mais do que números.<br><span class="highlight">Decisões melhores.</span></h2>
+          </div>
+          <div class="editorial-right">
+            <p class="lead-text">
+              A Romax Contabilidade redefiniu o papel da contabilidade tradicional. Atuamos como parceiros estratégicos de negócios, unindo rigor analítico, inovação tributária e visão consultiva de longo prazo.
+            </p>
+            <p class="body-text">
+              Acreditamos que a contabilidade não deve ser apenas uma obrigação burocrática, mas uma poderosa ferramenta de inteligência competitiva. Nossa missão é estruturar sua empresa para pagar o menor imposto legalmente possível, manter conformidade absoluta e potencializar sua margem de lucro.
+            </p>
+
+            <div class="stats-row">
+              <div class="stat-item">
+                <span class="stat-number" data-target="100">%</span>
+                <span class="stat-label">Segurança Fiscal</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-target="24">h</span>
+                <span class="stat-label">Atendimento Ágil</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">B2B</span>
+                <span class="stat-label">Soluções Corporativas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS EDITORIAL -->
+    <section class="section-editorial servicos-section" id="servicos">
+      <div class="container">
+        <div class="section-header-editorial">
+          <span class="section-num">02 / EXPERTISE</span>
+          <h2 class="section-title">Soluções Contábeis & Consultivas</h2>
+        </div>
+
+        <div class="servicos-interactive-list">
+          <!-- Item 1 -->
+          <div class="servico-item" data-index="01">
+            <div class="servico-header">
+              <span class="servico-num">01</span>
+              <h3 class="servico-title">CONTABILIDADE EMPRESARIAL</h3>
+              <span class="servico-toggle"><i class="fa-solid fa-plus"></i></span>
+            </div>
+            <div class="servico-content">
+              <p>Gestão contábil completa com relatórios gerenciais claros, balancetes periódicos e DRE para direcionar decisões estratégicas de crescimento sustentável.</p>
+              <ul class="servico-features">
+                <li><i class="fa-solid fa-check"></i> Análise de DRE e Balanço Patrimonial</li>
+                <li><i class="fa-solid fa-check"></i> Cumprimento integral de obrigações acessórias</li>
+                <li><i class="fa-solid fa-check"></i> Relatórios em tempo real</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="servico-item" data-index="02">
+            <div class="servico-header">
+              <span class="servico-num">02</span>
+              <h3 class="servico-title">PLANEJAMENTO TRIBUTÁRIO</h3>
+              <span class="servico-toggle"><i class="fa-solid fa-plus"></i></span>
+            </div>
+            <div class="servico-content">
+              <p>Análise minuciosa do enquadramento fiscal (Simples Nacional, Lucro Presumido ou Lucro Real) para reduzir custos com impostos em conformidade legal.</p>
+              <ul class="servico-features">
+                <li><i class="fa-solid fa-check"></i> Recuperação de créditos tributários</li>
+                <li><i class="fa-solid fa-check"></i> Redução da carga fiscal com elisão fiscal</li>
+                <li><i class="fa-solid fa-check"></i> Blindagem contra autuações</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="servico-item" data-index="03">
+            <div class="servico-header">
+              <span class="servico-num">03</span>
+              <h3 class="servico-title">REGULARIZAÇÃO & ABERTURA DE EMPRESAS</h3>
+              <span class="servico-toggle"><i class="fa-solid fa-plus"></i></span>
+            </div>
+            <div class="servico-content">
+              <p>Processo ágil e desburocratizado para constituição, alteração contratual e regularização de pendências em órgãos federais, estaduais e municipais.</p>
+              <ul class="servico-features">
+                <li><i class="fa-solid fa-check"></i> Estruturação societária estratégica</li>
+                <li><i class="fa-solid fa-check"></i> Obtenção de certidões e alvarás</li>
+                <li><i class="fa-solid fa-check"></i> Transição contábil sem complicações</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="servico-item" data-index="04">
+            <div class="servico-header">
+              <span class="servico-num">04</span>
+              <h3 class="servico-title">DEPARTAMENTO PESSOAL & MÃO DE OBRA</h3>
+              <span class="servico-toggle"><i class="fa-solid fa-plus"></i></span>
+            </div>
+            <div class="servico-content">
+              <p>Gestão completa da folha de pagamento, eSocial, admissões, rescisões e cumprimento rigoroso das legislações trabalhistas vigente.</p>
+              <ul class="servico-features">
+                <li><i class="fa-solid fa-check"></i> Processamento automatizado de folha</li>
+                <li><i class="fa-solid fa-check"></i> Gestão de benefícios e encargos</li>
+                <li><i class="fa-solid fa-check"></i> Mitigação de passivos trabalhistas</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="servico-item" data-index="05">
+            <div class="servico-header">
+              <span class="servico-num">05</span>
+              <h3 class="servico-title">CONSULTORIA DE GESTÃO FINANCEIRA</h3>
+              <span class="servico-toggle"><i class="fa-solid fa-plus"></i></span>
+            </div>
+            <div class="servico-content">
+              <p>Acompanhamento de fluxo de caixa, precificação de produtos/serviços e mentoria financeira direta para otimizar o capital de giro da sua empresa.</p>
+              <ul class="servico-features">
+                <li><i class="fa-solid fa-check"></i> Análise de margem de contribuição</li>
+                <li><i class="fa-solid fa-check"></i> Gestão de capital de giro</li>
+                <li><i class="fa-solid fa-check"></i> Indicadores de desempenho (KPIs)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFORMA TRIBUTÁRIA EDITORIAL -->
+    <section class="section-editorial reforma-section" id="reforma">
+      <div class="container">
+        <div class="reforma-card">
+          <div class="reforma-badge">GUIA ESTRATÉGICO</div>
+          <h2 class="reforma-title">REFORMA TRIBUTÁRIA</h2>
+          <p class="reforma-intro">Sua empresa está preparada para a maior transição fiscal das últimas décadas?</p>
+
+          <div class="reforma-grid">
+            <div class="reforma-item">
+              <span class="reforma-step">01</span>
+              <h4>O QUE MUDA</h4>
+              <p>Unificação de impostos (IBS/CBS), fim do efeito cascata e introdução do IVA Dual que redefinirá a alíquota sobre bens e serviços.</p>
+            </div>
+
+            <div class="reforma-item">
+              <span class="reforma-step">02</span>
+              <h4>QUEM É IMPACTADO</h4>
+              <p>Todas as empresas dos setores de Serviços, Comércio e Indústria precisarão recalcular precificação e margens de lucro.</p>
+            </div>
+
+            <div class="reforma-item">
+              <span class="reforma-step">03</span>
+              <h4>COMO SE PREPARAR</h4>
+              <p>Simulação antecipada de impacto financeiro e adequação de sistemas operacionais sob a orientação especializada da Romax.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="section-editorial diferenciais-section" id="diferenciais">
+      <div class="container">
+        <div class="section-header-editorial">
+          <span class="section-num">03 / PILARES</span>
+          <h2 class="section-title">Por que grandes negócios escolhem a Romax</h2>
+        </div>
+
+        <div class="diferenciais-grid">
+          <div class="diferencial-card">
+            <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Conformidade Absoluta</h3>
+            <p>Tranquilidade total contra fiscalizações e multas, garantida por auditorias contínuas e conformidade técnica rigorosa.</p>
+          </div>
+
+          <div class="diferencial-card">
+            <div class="card-icon"><i class="fa-solid fa-user-tie"></i></div>
+            <h3>Atendimento Consultivo</h3>
+            <p>Sem respostas genéricas ou robôs. Você tem canal direto com especialistas contábeis dedicados ao seu negócio.</p>
+          </div>
+
+          <div class="diferencial-card">
+            <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3>Agilidade & Tecnologia</h3>
+            <p>Integração de dados rápida, envio descomplicado de documentos e relatórios digitais sempre disponíveis no seu ritmo.</p>
+          </div>
+
+          <div class="diferencial-card">
+            <div class="card-icon"><i class="fa-solid fa-chart-pie"></i></div>
+            <h3>Visão Orientada a Lucro</h3>
+            <p>Atuamos proativamente identificando oportunidades de economia legal de impostos e melhoria operacional.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESSO TIMELINE -->
+    <section class="section-editorial processo-section" id="processo">
+      <div class="container">
+        <div class="section-header-editorial">
+          <span class="section-num">04 / METODOLOGIA</span>
+          <h2 class="section-title">Nossa Jornada Contábil</h2>
+        </div>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-line">
+            <div class="timeline-progress" id="timeline-progress"></div>
+          </div>
+
+          <div class="timeline-steps">
+            <div class="step-card">
+              <div class="step-num">01</div>
+              <h4>Contato Inicial</h4>
+              <p>Entendimento rápido da estrutura e desafios da sua empresa.</p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-num">02</div>
+              <h4>Diagnóstico Fiscal</h4>
+              <p>Análise minuciosa da situação tributária e contábil atual.</p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-num">03</div>
+              <h4>Planejamento</h4>
+              <p>Apresentação de plano sob medida com foco na economia e segurança.</p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-num">04</div>
+              <h4>Execução & Onboarding</h4>
+              <p>Migração simplificada sem interromper a rotina do seu negócio.</p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-num">05</div>
+              <h4>Acompanhamento</h4>
+              <p>Reuniões periódicas e suporte consultivo constante.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO CONTATO COM ENVIO INTEGRADO AO WHATSAPP -->
+    <section class="section-editorial contato-section" id="contato">
+      <div class="container">
+        <div class="contato-grid">
+          <div class="contato-info">
+            <span class="section-num">05 / CONTATO</span>
+            <h2 class="contato-heading">Vamos conversar sobre o próximo passo da sua empresa?</h2>
+            <p class="contato-subtext">Preencha os campos ao lado para iniciarmos o atendimento ou entre em contato diretamente pelos nossos canais oficiais.</p>
+
+            <div class="direct-channels">
+              <div class="channel-item">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                  <span class="channel-label">Telefone / WhatsApp</span>
+                  <a href="https://wa.me/5511949887154" target="_blank" class="channel-value">(11) 94988-7154</a>
+                </div>
+              </div>
+
+              <div class="channel-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                  <span class="channel-label">E-mail Profissional</span>
+                  <a href="mailto:wellington@romaxcontabilidade.com.br" class="channel-value">wellington@romaxcontabilidade.com.br</a>
+                </div>
+              </div>
+
+              <div class="channel-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                  <span class="channel-label">Atendimento</span>
+                  <span class="channel-value">São Paulo — SP | Todo o Brasil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FORMULÁRIO COM ENVIO EXCLUSIVO PARA O WHATSAPP -->
+          <div class="contato-form-card">
+            <h3 class="form-title">Envie uma mensagem</h3>
+            
+            <form id="whatsapp-form">
+              <div class="form-group">
+                <label for="nome">Seu Nome / Empresa</label>
+                <input type="text" id="nome" name="nome" placeholder="Ex: EmpresaX" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Seu E-mail Profissional</label>
+                <input type="email" id="email" name="email" placeholder="exemplo@empresa.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="telefone">Telefone / WhatsApp</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
+              </div>
+
+              <div class="form-group">
+                <label for="ajuda">Como a Romax pode ajudar seu negócio?</label>
+                <input type="text" id="ajuda" name="ajuda" placeholder="Ex: Planejamento tributário, migração contábil...">
+              </div>
+
+              <div class="form-group">
+                <label for="mensagem">Sua Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="3" placeholder="Detalhes adicionais..."></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit magnetic-btn">
+                <span>ENVIAR MENSAGEM VIA WHATSAPP</span>
+                <i class="fa-brands fa-whatsapp"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer>© <span id="ano"></span> Romax Contabilidade - Todos os direitos reservados.</footer>
-  <a class="whatsapp" href="https://wa.me/5511949887154" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    const servicos = {
-      contabilidade:{icone:'fa-chart-line',titulo:'Contabilidade Empresarial',texto:'Mantemos as informações financeiras da sua empresa organizadas, confiáveis e em conformidade com a legislação, apoiando decisões mais assertivas.',itens:['Escrituração contábil completa','Balanço Patrimonial e DRE','Obrigações acessórias','Relatórios gerenciais','Apoio estratégico ao empresário']},
-      regularizacao:{icone:'fa-clipboard-check',titulo:'Regularização Empresarial',texto:'Cuidamos de cada etapa burocrática para que sua empresa opere de forma regular e segura desde o primeiro dia.',itens:['Abertura e formalização de empresas','Alterações contratuais e cadastrais','Encerramento empresarial','Obtenção e atualização de licenças','Acompanhamento nos órgãos competentes']},
-      tributario:{icone:'fa-file-invoice-dollar',titulo:'Planejamento Tributário',texto:'Analisamos o cenário do seu negócio para encontrar alternativas legais que reduzam a carga tributária e elevem a eficiência.',itens:['Análise do regime tributário','Simulações de cenários fiscais','Revisão de enquadramento','Mapeamento de oportunidades','Acompanhamento da Reforma Tributária']},
-      pessoal:{icone:'fa-users',titulo:'Departamento Pessoal',texto:'Sua equipe é cuidada com processos trabalhistas organizados, pontuais e alinhados à legislação vigente.',itens:['Folha de pagamento','Admissões e desligamentos','Férias e benefícios','eSocial e obrigações trabalhistas','Atendimento a colaboradores']},
-      consultoria:{icone:'fa-handshake',titulo:'Consultoria Empresarial',texto:'Transformamos dados em orientação prática para fortalecer a gestão e apoiar o crescimento sustentável da sua empresa.',itens:['Diagnóstico financeiro','Indicadores para gestão','Organização de processos','Apoio à tomada de decisão','Plano de crescimento']}
-    };
-    const detalhe = document.getElementById('detalheServico');
-    function mostrarServico(chave) { const s = servicos[chave]; detalhe.innerHTML = `<div class="detalhe-icone"><i class="fa-solid ${s.icone}"></i></div><h2>${s.titulo}</h2><p>${s.texto}</p><ul>${s.itens.map(item => `<li><i class="fa-solid fa-check" style="color:#29c7ff"></i> ${item}</li>`).join('')}</ul><a href="#contato" class="btn">Solicitar atendimento</a>`; document.querySelectorAll('.card').forEach(card => { const ativo = card.dataset.servico === chave; card.classList.toggle('ativo', ativo); card.setAttribute('aria-pressed', ativo); }); }
-    document.querySelectorAll('.card').forEach(card => card.addEventListener('click', () => mostrarServico(card.dataset.servico)));
-    mostrarServico('contabilidade');
-    new Swiper('.servicosSwiper',{loop:true,spaceBetween:20,autoplay:{delay:3500,disableOnInteraction:false},pagination:{el:'.swiper-pagination',clickable:true},navigation:{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev'},breakpoints:{0:{slidesPerView:1},768:{slidesPerView:2},1100:{slidesPerView:3}}});
-    document.getElementById('ano').textContent = new Date().getFullYear();
-    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); }), {threshold:.15});
-    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
-  </script>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div class="footer-brand">
+          <span class="footer-logo-text">ROMAX CONTABILIDADE</span>
+          <p>&copy; 2026 Romax Contabilidade. TODO OS DIREITOS RESERVADOS</p>
+		 <p>Alameda Rio Negro 503, Sala 2020 - CEP 06454-000 - Alphaville Barueri SP</p>
+        </div>
+        <a href="#hero" class="btn-top" id="back-to-top">
+          <span>VOLTAR AO TOPO</span>
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Quick Button -->
+  <a href="https://wa.me/5511989185359" target="_blank" class="floating-whatsapp" title="Falar no WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- JavaScript Files -->
+  <script src="js/scroll.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
