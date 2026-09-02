@@ -1,0 +1,49 @@
+@media (max-width: 1024px) {
+  .hero-main-heading {
+    font-size: 4rem;
+  }
+
+  .editorial-grid,
+  .contato-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .reforma-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .timeline-steps {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .timeline-line {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    display: none; /* Can be toggled with mobile menu if needed */
+  }
+
+  .hero-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diferenciais-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .custom-cursor,
+  .custom-cursor-follower {
+    display: none !important;
+  }
+}
