@@ -152,7 +152,7 @@ body {
   justify-content: space-between;
 }
 
-.brand-logo {
+.logoimg {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -911,3 +911,7 @@ body {
 .floating-whatsapp:hover {
   transform: scale(1.1);
 }
+.logoimg { display:flex; align-items:center; gap:10; color:#fff; font-size:29px; font-weight:700; text-decoration:none; }
+    .logoimg span { color:var(--ciano); }
+    .logoimg img { height:55px; width:auto; display:block; transition:.3s; }
+    .logoimg img:hover { transform:scale(1.05); }
